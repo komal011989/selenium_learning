@@ -21,6 +21,7 @@ public class LoginTest extends BaseTest{
 		String actualTitle=lp.getTitle();
 		String expectedTitle= "OrangeHRM";
 				
+		System.out.println("This is added for 2nd commit for Github");
 		Reporter.log("Page Title " +actualTitle, true);		
 		
 		Assert.assertEquals(actualTitle, expectedTitle);
