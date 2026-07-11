@@ -1,0 +1,14 @@
+
+<suite name="Suite">
+
+    <test name="TestNG Sample Testing">
+        <classes>
+
+            <class name="test.LoginTestPF"/>
+         
+            
+        </classes>
+
+    </test>
+
+</suite>
