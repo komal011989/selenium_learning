@@ -7,7 +7,7 @@
 
         <classes>
 
-            <class name="test.LoginTest"/>
+            <class name="test.SkillsTest"/>
 
         </classes>
 
@@ -19,7 +19,7 @@
 
         <classes>
 
-            <class name="test.LoginTest"/>
+            <class name="test.SkillsTest"/>
 
         </classes>
 

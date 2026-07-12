@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]">
   <test thread-count="5" name="TestNG Sample Testing(failed)">
     <classes>
-      <class name="test.LoginTestPF">
+      <class name="test.SkillsTest">
         <methods>
           <include name="setup"/>
           <include name="closeBrowser"/>
-          <include name="verifyValidLogin"/>
+          <include name="addSkills"/>
         </methods>
-      </class> <!-- test.LoginTestPF -->
+      </class> <!-- test.SkillsTest -->
     </classes>
   </test> <!-- TestNG Sample Testing(failed) -->
 </suite> <!-- Failed suite [Suite] -->
