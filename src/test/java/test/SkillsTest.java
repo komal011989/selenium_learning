@@ -24,10 +24,11 @@ public class SkillsTest extends BaseTest{
 		SkillsPage sp=new SkillsPage(driver);
 		
     	sp.addSkills(sname, sdescription);
+        
     	
-    	String actualname=sp.getSkills();
+    	String actualname=sp.getSkills(sname);
     	
-    	 String expectedname=sname;
+         String expectedname=sname;
     	 
         Reporter.log("Skill Name:" +actualname, true);		
 		
