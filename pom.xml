@@ -36,12 +36,7 @@
                 <scope>test</scope>
             </dependency>
             
-            <!-- JUnit 5 --> <dependency>    
-             <groupId>org.junit.jupiter</groupId>     
-             <artifactId>junit-jupiter</artifactId>     
-             <version>5.10.2</version>     
-             <scope>test</scope> 
-             </dependency>
+           
    
             <!-- ❗ IMPORTANT NOTE FOR STUDENTS:
                  We are NOT using JUnit.
