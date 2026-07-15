@@ -26,16 +26,61 @@ public class SkillsTest extends BaseTest{
     	sp.addSkills(sname, sdescription);
         
     	
-    	String actualname=sp.getSkills(sname);
+    	String actualName=sp.getSkills(sname,sdescription);
     	
-         String expectedname=sname;
+         String expectedName="Skill: " + sname + " | Description: " + sdescription;
     	 
-        Reporter.log("Skill Name:" +actualname, true);		
+        Reporter.log("New Skill Created with name:" +actualName, true);		
 		
-		Assert.assertEquals(actualname, expectedname);
+		Assert.assertEquals(actualName, expectedName);
     	
-  
 	}
+	
+    @Test(dataProvider="skilldetails", priority=3)
+	public void deleteSkill(String sname,String sdescription) {
+		
+    	LoginPage lp=new LoginPage(driver);
+    	
+		 String uname=p.getProperty("username");
+		 String pwd=p.getProperty("password");
+		 
+		 lp.login(uname, pwd);
+		 
+		SkillsPage sp=new SkillsPage(driver);
+	
+		sp.deleteSkill(sname,sdescription);
+		
+		sp.getSkills(sname,sdescription);
+		String actualName=sp.getSkills(sname,sdescription);
+    	
+        String expectedName="Skill: " + "Not Found" + " | Description: " + "Not Found";
+   	 
+       Reporter.log("Skill Not Found:" +actualName, true);		
+		
+		Assert.assertEquals(actualName, expectedName);
+   	
+	}
+    
+    @Test(dataProvider="editeddetails", priority=2)
+   	public void editSkill(String sname,String sdescription) {
+   		
+       	LoginPage lp=new LoginPage(driver);
+       	
+   		 String uname=p.getProperty("username");
+   		 String pwd=p.getProperty("password");
+   		 
+   		 lp.login(uname, pwd);
+   		 
+   		SkillsPage sp=new SkillsPage(driver);
+   		sp.editSkill(sname,sdescription);
+   		
+   		String actualName=sp.getSkills(sname, sdescription);
+   		
+   		String expectedName="Skill: " + sname + " | Description: " + sdescription;
+   		
+   	   Reporter.log("Skill edited " +actualName, true);		
+   		Assert.assertEquals(actualName, expectedName);
+    }
 	
 	@DataProvider(name="skilldetails")
     public Object[][] getData()
@@ -48,5 +93,16 @@ public class SkillsTest extends BaseTest{
     		
     };
     }
+ 
+	@DataProvider(name="editeddetails")
+    public Object[][] editData()
+    {
 
+    	return new Object[][]
+    {
+    		{"QA","This is Quality Analyst Skill"},
+    		
+    		
+    };
+    }
 }

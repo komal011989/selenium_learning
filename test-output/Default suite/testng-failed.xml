@@ -6,7 +6,7 @@
       <class name="test.SkillsTest">
         <methods>
           <include name="setup"/>
-          <include name="addSkills"/>
+          <include name="editSkill" invocation-numbers="0"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- test.SkillsTest -->
